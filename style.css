@@ -1,0 +1,84 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+
+  position: relative;
+}
+
+.return-point {
+  width: 50px;
+  height: 50px;
+  background-color: yellow;
+
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.load-container {
+  width: 100vw;
+  height: 100vh;
+  /*background-color: green;*/
+}
+
+.custom-container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.load-container > .custom-container {
+  /*background-color: yellow;*/
+  height: 90vw;
+  padding-top: calc((100vh - 90vw) / 2);
+}
+
+#map {
+  width: 90vw;
+  height: 90vw;
+  /*min-width: 350px;
+  min-height: 350px;*/
+}
+
+.mapboxgl-control-container {
+  display: none;
+}
+
+.marker {
+  background-image: url('map-pin-solid-custom.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  width: 26px;
+  height: 66px;
+  padding-bottom: 66px;
+
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+section {
+  margin-bottom: 200px;
+}
