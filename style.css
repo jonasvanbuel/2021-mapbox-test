@@ -30,6 +30,7 @@ body {
   margin: 0 auto;
 }
 
+
 .load-container > .custom-container {
   /*background-color: yellow;*/
   height: 90vw;
@@ -81,4 +82,76 @@ a {
 
 section {
   margin-bottom: 200px;
+}
+
+/*RESPONSIVE TEMPLATE
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .custom-container {
+    width: 80vw;
+  }
+
+  .load-container > .custom-container {
+    height: 80vw;
+    padding-top: calc((100vh - 80vw) / 2);
+  }
+
+  #map {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .custom-container {
+    width: 65vw;
+  }
+
+  .load-container > .custom-container {
+    height: 65vw;
+    padding-top: calc((100vh - 65vw) / 2);
+  }
+
+  #map {
+    width: 65vw;
+    height: 65vw;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .custom-container {
+    width: 50vw;
+  }
+
+  .load-container > .custom-container {
+    height: 50vw;
+    padding-top: calc((100vh - 50vw) / 2);
+  }
+
+  #map {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .custom-container {
+    width: 40vw;
+  }
+
+  .load-container > .custom-container {
+    height: 40vw;
+    padding-top: calc((100vh - 40vw) / 2);
+  }
+
+  #map {
+    width: 40vw;
+    height: 40vw;
+  }
 }
