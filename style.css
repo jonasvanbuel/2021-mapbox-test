@@ -4,9 +4,26 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: 200px;
   font-family: 'Open Sans', sans-serif;
 
   position: relative;
+}
+
+h3 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+section {
+  margin-top: 200px;
+
+  color: #1c3b5e;
+  font-family: Helvetica Neue;
 }
 
 .return-point {
@@ -60,6 +77,14 @@ body {
   cursor: pointer;
 }
 
+.dot-marker {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -71,17 +96,24 @@ body {
   align-items: center;
 }
 
-h3 {
-  text-align: center;
-}
-
-a {
+section > a:link,
+section > a:visited,
+section > a:active {
   text-decoration: none;
-  margin-bottom: 8px;
+  font-size: 10px;
+  opacity: 1;
+  font-weight: 600;
 }
 
-section {
-  margin-bottom: 200px;
+section > a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+section > p {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.2;
 }
 
 /*RESPONSIVE TEMPLATE
