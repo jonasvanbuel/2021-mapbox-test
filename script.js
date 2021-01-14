@@ -16,7 +16,8 @@ const geojson = {
       title: 'Forum Paracelsus',
       address: 'Plazza Paracelsus 2, 7500 St. Moritz',
       locationUrl: 'https://goo.gl/maps/e6ZckP1XyYYJsd1j6',
-      moreInfoUrl: '#sectionForumParacelsus'
+      moreInfoUrl: '#sectionForumParacelsus',
+      markerColor: '#7a2f8a'
     }
   },
   {
@@ -26,10 +27,11 @@ const geojson = {
       coordinates: [9.837382652620704,46.49037730561599]
     },
     properties: {
-      title: 'St. Moritz Bad',
+      title: 'Two Figures with a Drum',
       address: 'Via Ludains 3, 7500 St. Moritz',
       locationUrl: 'https://goo.gl/maps/3SoqqpMZM3zGY2cm8',
-      moreInfoUrl: '#sectionStMoritzBad'
+      moreInfoUrl: '#sectionTwoFigureswithADrum',
+      markerColor: '#f36f23'
     }
   },
   {
@@ -42,7 +44,8 @@ const geojson = {
       title: 'The Monk',
       address: 'Lake St Moritz, 7500 St. Moritz',
       locationUrl: 'https://goo.gl/maps/2Lu9nDnGgXTbeDEN9',
-      moreInfoUrl: '#sectionTheMonk'
+      moreInfoUrl: '#sectionTheMonk',
+      markerColor: '#5aa447'
     }
   },
   {
@@ -55,7 +58,8 @@ const geojson = {
       title: 'Temple',
       address: 'Via Dimlej 6, 7500 St. Moritz',
       locationUrl: 'https://goo.gl/maps/3SoqqpMZM3zGY2cm8',
-      moreInfoUrl: '#sectionTemple'
+      moreInfoUrl: '#sectionTemple',
+      markerColor: '#f6ee4e'
     }
   },
   {
@@ -68,7 +72,8 @@ const geojson = {
       title: 'Reformierte Kirche',
       address: 'Via Veglia 12, 7500 St. Moritz',
       locationUrl: 'https://goo.gl/maps/TQvKjJiNUzM64WN79',
-      moreInfoUrl: '#sectionChurch'
+      moreInfoUrl: '#sectionChurch',
+      markerColor: '#bf64a8'
     }
   }]
 };
@@ -90,11 +95,16 @@ map.fitBounds([
 })
 
 // add markers to map
-geojson.features.forEach(function(marker) {
+geojson.features.forEach(function(marker, ) {
 
   // Marker element
-  const markerEl = document.createElement('div');
-  markerEl.className = 'marker';
+  // const markerEl = document.createElement('div');
+  // markerEl.className = 'marker';
+
+  // Circle element
+  const dotMarkerEl = document.createElement('div');
+  dotMarkerEl.className = "dot-marker";
+  dotMarkerEl.style = `background-color:${marker.properties.markerColor}`;
 
   // Popup element
   const popupContent = `
@@ -104,7 +114,7 @@ geojson.features.forEach(function(marker) {
   `;
 
   // make a marker for each feature and add to the map
-  new mapboxgl.Marker(markerEl)
+  new mapboxgl.Marker(dotMarkerEl)
     .setLngLat(marker.geometry.coordinates)
     .setPopup(new mapboxgl.Popup() // add popups
                           .setHTML(popupContent))
